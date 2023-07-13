@@ -23,13 +23,13 @@ jobs:
         with:
           project: Project Board
           column: 'PR Needs review (Automated Column, do not place items here manually)'
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}      
-    
-    
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+
+
   # Gathers merged PRs from every location and moves to column 'test-approved-by-reviewer...'
   Gather-Merged-PRs:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == true }} 
+    if: ${{ github.event.pull_request.merged == true }}
     steps:
       - name: Gather Merged PRs
         uses: alex-page/github-project-automation-plus@v0.8.3
@@ -43,13 +43,13 @@ jobs:
   Delete-Merged-PRs:
     needs: Gather-Merged-PRs
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == true }} 
-    steps: 
+    if: ${{ github.event.pull_request.merged == true }}
+    steps:
       - name: Delete Merged PRs
         uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
-          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
+          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           action: delete
 
@@ -65,3 +65,5 @@ jobs:
           column: 'PR Needs review (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           action: delete
+
+          #blah blah
