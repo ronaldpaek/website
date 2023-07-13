@@ -2,9 +2,10 @@ name: Add Pull Request Instructions
 on:
   pull_request:
     types: [opened]
-    # branches:
-    #   - 'gh-pages'
-    #   - 'feature-homepage-launch'
+    branches:
+      - 'gh-pages'
+      - 'feature-homepage-launch'
+      - 'updates-wr-pr-instructions-4934'
 
 jobs:
   Add-Pull-Request-Instructions:
@@ -33,4 +34,3 @@ jobs:
         with:
           name: adding-pr-instructions-artifact
           path: addingPrInstructions/artifact/
-#test test
