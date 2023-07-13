@@ -43,7 +43,7 @@ jobs:
             const artifact = fs.readFileSync('artifact.txt')
             const artifactJSON = JSON.parse(artifact);
             return artifactJSON
-      
+
       - uses: actions/checkout@v3
       # Create the message to post
       - name: Post Comment
@@ -61,3 +61,5 @@ jobs:
     steps:
       - name: Failed Run
         run: echo "The previous GitHub Action failed. Please check the logs for the previous action."
+
+        #test test
